@@ -1,0 +1,7 @@
+FROM node
+ENV NODE_ENV test
+ENV PORT 8282
+ADD propertguess.tar.gz .
+RUN npm ci --only production
+EXPOSE 8282
+CMD [ "node", "index.js" ]
